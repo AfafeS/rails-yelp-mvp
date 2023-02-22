@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<%= render @restaurant %>
+<div>
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @reviews.each do |review| %>
+    <a href="<%= review.content %>"><%= review.content %></a><li class="list-group-item"></li>
+  <% end %>
+</ul>
+<br>
+  <%= link_to "Back to restaurants", restaurants_path %>
+  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
+</div>
